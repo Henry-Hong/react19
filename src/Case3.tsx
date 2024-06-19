@@ -7,6 +7,7 @@ import { useFormStatus } from "react-dom";
  * It is wrapped with <Suspense> component like Case2.
  * and it has a dependency on the form status.
  * It will cause an infinite loop of re-renders "when the form has done submitting."
+ * differences between case1 is it rerenders only Case3 component not the root component.
  */
 export default function Case3() {
   const { pending } = useFormStatus();

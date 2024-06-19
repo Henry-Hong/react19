@@ -19,7 +19,7 @@ function App() {
       {/* <Case1 /> */}
 
       {/* Case2 : no infinite loop */}
-      <Case2 />
+      {/* <Case2 /> */}
 
       {/* Case3 : infinite loop when the form has done submitting  */}
       {/* <Case3 /> */}

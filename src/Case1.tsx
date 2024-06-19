@@ -4,6 +4,7 @@ import { lazy } from "react";
  * TargetComponent is imported using lazy (dynamic import) in this case.
  * It doesn't wrapped with <Suspense> component.
  * It will cause an infinite loop of re-renders no matter the form is submitting or not.
+ * differences between case3 is it rerenders root component too.
  */
 export default function Case1() {
   console.log("case1 rendered");
