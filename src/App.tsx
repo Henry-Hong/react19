@@ -1,26 +1,28 @@
-import { useState } from "react";
-import StatusComponent from "./components/StatusComponent";
+import Case1 from "./Case1";
+import Case2 from "./Case2";
+import Case3 from "./Case3";
 
 function App() {
+  console.log("root rendered");
+
   const formAction = async (formData: FormData) => {
     const todo = formData.get("todo") as string;
-    await new Promise((res) => setTimeout(() => res(todo), 1000));
+    await new Promise((res) => setTimeout(() => res(todo), 2000));
+    console.log("form submitted", todo);
   };
-
-  const [value, setValue] = useState("");
-
-  console.log("rendered");
 
   return (
     <form action={formAction}>
-      <input
-        style={{ width: "100%" }}
-        name="todo"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      ></input>
+      <input name="todo" />
       <button type="submit">button</button>
-      <StatusComponent />
+      {/* Case1 : infinite loop no matter the form is submitting or not */}
+      {/* <Case1 /> */}
+
+      {/* Case2 : no infinite loop */}
+      <Case2 />
+
+      {/* Case3 : infinite loop when the form has done submitting  */}
+      {/* <Case3 /> */}
     </form>
   );
 }
